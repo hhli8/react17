@@ -8,3 +8,9 @@ tmp/nanoc/
 
 # Crash Log
 crash.log
+
+mark.txt
+node_modules
+/dist
+.project
+temp
