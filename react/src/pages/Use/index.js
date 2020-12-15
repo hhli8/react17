@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
-var use = function Example() {
+let use = function Example () {
   return (
     <div>
       <p>this is use</p>
@@ -11,6 +11,5 @@ var use = function Example() {
 const mapStateToProps = state => ({
   shopcar: state.shopcar
 })
-
-const actionCreators = { setList }
+const actionCreators = {}
 export default connect(mapStateToProps, actionCreators)(use)

@@ -109,6 +109,12 @@ module.exports = {
             cacheCompression: false
           }
         }
+      },
+      {
+        test: /\.jsx?$/, 
+        enforce: 'pre',  
+        loader: "eslint-loader",
+        include: /react/
       }
     ]
   }

@@ -16,6 +16,7 @@
         var isM = /(?:iPhone)/.test(ua) || /(?:Android)/.test(ua)
         var meta = document.createElement('meta')
         var Scale = !isM ? 1 : 1 / dpr
+        meta.setAttribute('name', 'viewport')
         meta.setAttribute('content', 'width=device-width, user-scalable=no, initial-scale=' + Scale + ',maximum-scale=' + Scale + ', minimum-scale=' + Scale)
         document.head.appendChild(meta)
         var recalc = function() {
@@ -27,11 +28,11 @@
         if (isM) {
           win.addEventListener(resizeEvt, recalc, false)
           if (doc.readyState === 'complete') {
-            doc.body.style.fontSize = 12 * dpr + 'px'
+            doc.body.style.fontSize = 16 * dpr + 'px'
           } else {
             doc.addEventListener('DOMContentLoaded', function(e) {
               recalc()
-              doc.body.style.fontSize = 12 * dpr + 'px'
+              doc.body.style.fontSize = 16 * dpr + 'px'
             }, false)
           }
         } else {
