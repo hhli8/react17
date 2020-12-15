@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 let use = function Example () {
   return (
     <div>
-      <p>this is use</p>
+      <p className="p"><span>精选</span>this is use</p>
     </div>
   )
 }

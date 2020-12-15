@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './index.scss'
 
 export default function Example () {
   const [count, setCount] = useState(0)
@@ -10,12 +11,19 @@ export default function Example () {
     console.log(1)
     document.title = `You clicked ${count} times`
   }, [count])
+  let jump = () => {
+    console.log(1111)
+    this.props.history.push({
+      pathname: 'shopcar'
+    })
+  }
 
   return (
     <div>
+      <p className="p">精选</p>
       <p>You clicked {count} times</p>
       <p>Your name is {name}</p>
-      <button onClick={() => setCount(count + 1)}>
+      <button onClick={() => jump()}>
         Click me
       </button>
       <button onClick={() => setName(name + 'm')}>

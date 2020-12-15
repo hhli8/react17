@@ -79,7 +79,7 @@ module.exports = {
         include: path.resolve(__dirname, "./react"),
         use: [{
           loader: MiniCssExtractPlugin.loader
-        }, 'css-loader', 'sass-loader']
+        }, 'css-loader', 'sass-loader', 'postcss-loader']
       },
       {
         test: /\.(png|jpe?g|gif)$/,

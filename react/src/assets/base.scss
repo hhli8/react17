@@ -126,6 +126,7 @@ button {
     background-color: transparent;
     border: 0;
     outline: none;
+    font-size: 16px;
 }
 input {
   border: none;
@@ -137,14 +138,16 @@ input {
 ::-moz-placeholder { color: #999; }
 :-moz-placeholder { color: #999; }
 * {
+    /* 
+    -webkit-touch-callout: none; 
+    -webkit-overflow-scrolling: touch;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;*/
     outline: none;
     -webkit-tap-highlight-color: transparent;
-//  -webkit-touch-callout: none;
-    -webkit-overflow-scrolling: touch;
-//  -webkit-touch-callout: none; /* iOS Safari */
-//  -webkit-user-select: none; /* Chrome/Safari/Opera */
-//  -khtml-user-select: none; /* Konqueror */
-//  -moz-user-select: none; /* Firefox */
-//  -ms-user-select: none; /* Internet Explorer/Edge */
-//  user-select: none;
+    user-select: none;
 }
