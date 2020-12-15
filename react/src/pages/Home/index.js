@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import './index.scss'
+import styles from './index.scss'
 
-export default function Example () {
+export default function Example (props) {
+  console.log(props)
+  const { history } = props
   const [count, setCount] = useState(0)
   // count = 0, setCount 方法修改count
   const [name, setName] = useState('Lee')
@@ -13,14 +15,12 @@ export default function Example () {
   }, [count])
   let jump = () => {
     console.log(1111)
-    this.props.history.push({
-      pathname: 'shopcar'
-    })
+    history.push('use')
   }
 
   return (
     <div>
-      <p className="p">精选</p>
+      <p className={styles['p']}>精选</p>
       <p>You clicked {count} times</p>
       <p>Your name is {name}</p>
       <button onClick={() => jump()}>

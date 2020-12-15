@@ -8,8 +8,10 @@ let use = function Example () {
     </div>
   )
 }
-const mapStateToProps = state => ({
+
+/* const mapStateToProps = state => ({
   shopcar: state.shopcar
 })
 const actionCreators = {}
-export default connect(mapStateToProps, actionCreators)(use)
+export default connect(mapStateToProps, actionCreators)(use) */
+export default use

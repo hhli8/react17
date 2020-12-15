@@ -77,7 +77,15 @@ module.exports = {
         include: path.resolve(__dirname, "./react"),
         use: [{
           loader: MiniCssExtractPlugin.loader
-        }, 'css-loader', 'sass-loader', 'postcss-loader']
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              mode: 'local',
+              localIdentName: '[name]__[local]--[hash:base64:5]'
+            }
+          }
+        }, 'sass-loader', 'postcss-loader']
       },
       {
         test: /\.(png|jpe?g|gif)$/,
