@@ -101,7 +101,7 @@ module.exports = {
       },
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        // exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -116,11 +116,12 @@ module.exports = {
             // 退出缓存压缩
             cacheCompression: false,
             "plugins": [
-              ["import", {
+              /* ["import", {
                 libraryDirectory: 'es',
                 style: 'css',
                 libraryName: "antd-mobile"
-              }]
+              }], */
+              ["import", {libraryDirectory: 'lib',libraryName: "rsnake"}]
             ]
           }
         }

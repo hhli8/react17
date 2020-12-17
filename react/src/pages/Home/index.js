@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styles from './index.scss'
 import './index.css'
-import { Button } from 'antd-mobile'
+// import { Button } from 'antd-mobile'
+// import Sbutton from '@/components/button'
+import { Button } from 'rsnake'
 
 export default function Home (props) {
   /* console.log(props)
@@ -23,7 +25,7 @@ export default function Home (props) {
     <div>
       <h1 className="p">Hello from My Component</h1>
       11
-      <Button>default</Button>
+      <Button />
     </div>
   )
 }

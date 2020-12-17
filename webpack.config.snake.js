@@ -3,7 +3,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const copyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
-const BuildRightPlugin = require('./plugins/BuildRightPlugin');
 
 // style files regexes
 const cssRegex = /\.css$/;
@@ -16,16 +15,17 @@ module.exports = {
     main: "./react/src/components/index.js"
   },
   output: {
-    path: path.resolve(__dirname, "lib"),
-    library: 'Snake',
-    libraryTarget: 'umd'
+    path: path.join(__dirname, 'lib'),
+    filename: 'index.js',
+    libraryTarget: 'umd', // 不管在commonjs、AMD、CMD 引入，都能引入到
+    library: 'utils' // 支持script标签引入，全局变量叫 utils
   },
   mode: "production",
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash:8].css"
-    })
+    }),
   ],
   optimization: {
     splitChunks:{
@@ -81,6 +81,12 @@ module.exports = {
           loader: MiniCssExtractPlugin.loader
         }, {
           loader: 'css-loader',
+          options: {
+            modules: {
+              mode: 'local',
+              localIdentName: '[name]__[local]--[hash:base64:5]'
+            }
+          }
         }, 'sass-loader', 'postcss-loader']
       },
       {
@@ -110,7 +116,7 @@ module.exports = {
             // 将会尝试读取缓存，来避免在每次执行时，可能产生的、高性能消耗的 Babel 重新编译过程(recompilation process)
             cacheDirectory: true,
             // 退出缓存压缩
-            cacheCompression: false,
+            cacheCompression: false
           }
         }
       }
