@@ -131,7 +131,7 @@ module.exports = {
     }],
     // 要求在注释周围有空行 ( 要求在块级注释之前有一空行)
     "lines-around-comment": [2, {
-      "beforeBlockComment": true
+      "beforeBlockComment": false
     }],
     "func-style": 0,
     // 强制回调函数最大嵌套深度 5层

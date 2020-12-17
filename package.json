@@ -2,14 +2,15 @@
   "name": "lhh-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js --ext .jsx react",
     "build": "webpack",
     "start": "webpack-dev-server",
     "start:react:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.react.dev.js",
-    "build:react:prod": "cross-env NODE_ENV=production webpack --config ./webpack.react.prod.js"
+    "build:react:prod": "cross-env NODE_ENV=production webpack --config ./webpack.react.prod.js",
+    "build:react:snake": "cross-env NODE_ENV=production webpack --config ./webpack.config.snake.js"
   },
   "author": "lihaihong",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "@babel/preset-react": "^7.12.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "babel-plugin-import": "^1.13.3",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.4.0",
     "cross-env": "^7.0.3",
@@ -48,6 +50,7 @@
     "webpack-merge": "^5.4.0"
   },
   "dependencies": {
+    "antd-mobile": "^2.3.4",
     "lodash": "^4.17.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

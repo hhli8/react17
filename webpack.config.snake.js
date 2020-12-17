@@ -13,49 +13,21 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 module.exports = {
   entry: {
-    main: "./react/main.js"
+    main: "./react/src/components/index.js"
   },
   output: {
-    filename: "[name].[contenthash:8].js",
-    path: path.resolve(__dirname, "dist/react")
+    path: path.resolve(__dirname, "lib"),
+    library: 'Snake',
+    libraryTarget: 'umd'
   },
   mode: "production",
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "./react/index.html"),
-      inject: true
-    }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash:8].css"
-    }),
-    /* new BuildRightPlugin({
-      v: '1.0.0'
-    }) */
-    /* new copyWebpackPlugin({
-      patterns: [
-        {
-          from: __dirname + '/dist/react',
-          to: './react'
-        }
-      ]
-    }) */
+    })
   ],
   optimization: {
-    /* splitChunks: {
-      chunks: 'all',
-      minSize: 30000,
-      maxSize: 50000,
-      minChunks: 1,
-      automaticNameDelimiter: '~'
-    } */
-    /* splitChunks: {
-      chunks: 'all',
-      minSize: 30000,
-      maxSize: 50000,
-      minChunks: 1,
-      automaticNameDelimiter: '~'
-    } */
     splitChunks:{
       cacheGroups: {
         vendors: {
@@ -98,25 +70,10 @@ module.exports = {
     rules: [
       {
         test: cssRegex,
-        // include: path.resolve(__dirname, "./react"),
         use: [{
           loader: MiniCssExtractPlugin.loader
         }, 'css-loader']
       },
-      /* {
-        test: /\.less$/,
-        exclude: path.resolve(__dirname, "./react"),
-        use: [
-          { loader: MiniCssExtractPlugin.loader },
-          { loader: 'css-loader' }, 
-          {
-            loader: 'less-loader',
-            options: {
-              // javascriptEnabled: true
-            }
-          }
-        ]
-      }, */
       {
         test: sassRegex,
         include: path.resolve(__dirname, "./react"),
@@ -124,12 +81,6 @@ module.exports = {
           loader: MiniCssExtractPlugin.loader
         }, {
           loader: 'css-loader',
-          options: {
-            modules: {
-              mode: 'local',
-              localIdentName: '[name]__[local]--[hash:base64:5]'
-            }
-          }
         }, 'sass-loader', 'postcss-loader']
       },
       {
@@ -160,13 +111,6 @@ module.exports = {
             cacheDirectory: true,
             // 退出缓存压缩
             cacheCompression: false,
-            "plugins": [
-              ["import", {
-                libraryDirectory: 'es',
-                style: 'css',
-                libraryName: "antd-mobile"
-              }]
-            ]
           }
         }
       }

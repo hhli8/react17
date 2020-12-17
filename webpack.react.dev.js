@@ -67,7 +67,7 @@ module.exports = {
     rules: [
       {
         test: cssRegex,
-        include: path.resolve(__dirname, "./react"),
+        // include: path.resolve(__dirname, "./react"),
         use: [{
           loader: MiniCssExtractPlugin.loader
         }, 'css-loader']
@@ -114,7 +114,14 @@ module.exports = {
             // 将会尝试读取缓存，来避免在每次执行时，可能产生的、高性能消耗的 Babel 重新编译过程(recompilation process)
             cacheDirectory: true,
             // 退出缓存压缩
-            cacheCompression: false
+            cacheCompression: false,
+            "plugins": [
+              ["import", {
+                libraryDirectory: 'es',
+                style: 'css',
+                libraryName: "antd-mobile"
+              }]
+            ]
           }
         }
       },

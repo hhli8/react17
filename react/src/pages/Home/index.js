@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import styles from './index.scss'
+import './index.css'
+import { Button } from 'antd-mobile'
 
-export default function Example (props) {
-  console.log(props)
+export default function Home (props) {
+  /* console.log(props)
   const { history } = props
   const [count, setCount] = useState(0)
   // count = 0, setCount 方法修改count
@@ -16,19 +18,12 @@ export default function Example (props) {
   let jump = () => {
     console.log(1111)
     history.push('use')
-  }
-
+  } */
   return (
     <div>
-      <p className={styles['p']}>精选</p>
-      <p>You clicked {count} times</p>
-      <p>Your name is {name}</p>
-      <button onClick={() => jump()}>
-        Click me
-      </button>
-      <button onClick={() => setName(name + 'm')}>
-        Click me
-      </button>
+      <h1 className="p">Hello from My Component</h1>
+      11
+      <Button>default</Button>
     </div>
   )
 }

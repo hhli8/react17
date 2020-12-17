@@ -1,0 +1,16 @@
+# .npmignore
+node_modules
+dist
+plugins
+react
+src
+temp
+.eslintrc.js
+.gitignore
+.prettierrc.js
+.project
+LICENSE
+mark.txt
+postcss.config.js
+README.md
+webpack.*
