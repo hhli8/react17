@@ -1,0 +1,217 @@
+1、新建webpack项目，最新版webpack5,2020-10-10发布
+2、cnpm init 或者cnpm init -y
+3、安装依赖 cnpm i webpack webpack-cli --save-dev
+4、打包 npm run build
+报错：
+/usr/local/lib/node_modules/webpack/lib/cli.js:66
+                        .replace(
+                        ^
+
+SyntaxError: Invalid regular expression: /(\p{Uppercase_Letter}+|\p{Lowercase_Letter}|\d)(\p{Uppercase_Letter}+)/: Invalid escape
+    at pathToArgumentName (/usr/local/lib/node_modules/webpack/lib/cli.js:66:4)
+    at addFlag (/usr/local/lib/node_modules/webpack/lib/cli.js:170:16)
+    at traverse (/usr/local/lib/node_modules/webpack/lib/cli.js:243:21)
+    at traverse (/usr/local/lib/node_modules/webpack/lib/cli.js:299:23)
+    at traverse (/usr/local/lib/node_modules/webpack/lib/cli.js:248:24)
+    at Object.getArguments (/usr/local/lib/node_modules/webpack/lib/cli.js:308:2)
+    at Object.<anonymous> (/usr/local/lib/node_modules/webpack-cli/lib/utils/cli-flags.js:245:30)
+    at Module._compile (/usr/local/lib/node_modules/webpack-cli/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:665:10)
+    at Module.load (internal/modules/cjs/loader.js:566:32)
+升级node版本到最新，v14.15.1处理了
+5、配置loader,css
+6、配置出口html-webpack-plugin template模板
+css打包出口
+filename和chunkFilename的区别
+hash=> chunkhash和contenthash
+
+No more changes should happen to Compilation.assets after sealing the Compilation.
+"html-webpack-plugin": "^4.5.0",版本"html-webpack-plugin": "^5.0.0-alpha.3",可解决
+7、替换文件，指定文件转换?
+8、server
+Cannot find module 'webpack-cli/bin/config-yargs'-报错
+"webpack-cli": "^4.2.0",  => 3.3.12解决了
+9、externals 将常规依赖不打进包，减小体积，使用CDN
+10、打包js文件置于底部
+无async 且 defer？= 异步加载，执行是在html解析完，但是是原来的js顺序执行
+async 异步加载，加载完就执行，阻塞
+正常：遇到script加载和执行都是阻塞的（html解析暂停）
+inject: true
+11、externals配置--tree-shaking优化
+ 1.// 所有文件都有副作用，全都不可 tree-shaking
+{
+ "sideEffects": true
+}
+// 没有文件有副作用，全都可以 tree-shaking
+{
+ "sideEffects": false
+}
+// 只有这些文件有副作用，所有其他文件都可以 tree-shaking，但会保留这些文件
+{
+ "sideEffects": [
+  "./src/file1.js",
+  "./src/file2.js"
+ ]
+}
+  optimization-usedExports
+  2.代码分割
+  import动态导入，then
+  splitChunksPlugin
+12、配置一个react项目
+12.1 babel-loader @babel/core @babel/preset-env
+babel-loader @babel/core @babel/preset-env @babel/preset-react -D
+12.2
+
+require.resolve?在Node.js中，可以使用require.resolve函数来查询某个模块文件的带有完整绝对路径的文件名
+注意：使用require.resolve函数查询模块文件名时并不会加载该模块。
+410 377
+
+13、手写plugins
+和loader的区别。。。。
+https://blog.csdn.net/yolo0927/article/details/85017565?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control
+
+14、copy-webpack-plugin
+打包静态文件到指定位置
+
+15、
+(node:14824) [DEP_WEBPACK_COMPILATION_ASSETS] DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.
+BREAKING CHANGE: No more changes should happen to Compilation.assets after sealing the Compilation.
+        Do changes to assets earlier, e. g. in Compilation.hooks.processAssets.
+        Make sure to select an appropriate stage from Compilation.PROCESS_ASSETS_STAGE_*.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+plugin里面的引起的
+
+16
+2020-12-14
+完成react路由，redux配置
+
+17 配置eslint
+cnpm install eslint -D
+创建ESlint配置文件.eslintrc.js, eslint --init 无效
+cnpm i pre-commit eslint-loader babel-eslint eslint-plugin-react eslint-plugin-import -D
+
+cnpm install pre-commit --save-dev
+
+eslint-config-airbnb：Airbnb的标准（配置文件的extends里没用airbnb的话可以不装）
+eslint-plugin-jsx-a11y：Airbnb标准必需
+eslint-plugin-import：Airbnb标准必需。用来校验 import 的，比如不能加 .js 后缀。
+eslint-plugin-react：支持 react 语法
+babel-eslint: 兼容ES处于实验性阶段的语法，如类属性用”=“赋值。
+eslint-loader：在webpack中解析
+eslint-plugin-babel：兼容处于实验阶段的特征
+配置 pre
+配置。。。Prettier
+作用：Eslint 来提高我们编码的质量，但是却无法保证统一代码风格
+cnpm i prettier eslint-config-prettier eslint-plugin-prettier -D
+在.eslintrc.js里面添加"plugin:prettier/recommended"
+husky：一个方便用来处理 pre-commit 、 pre-push 等 githooks 的工具
+lint-staged：对 git 暂存区的代码，运行 linters 的工具
+cnpm i husky lint-staged -D
+去掉 Prettier
+
+18、postcss-loader配置
+cnpm i postcss-loader autoprefixer postcss-cssnext postcss-pxtorem postcss-flexbugs-fixes postcss-preset-env -D
+//postcss-normalize
+
+/* ident: 'postcss',
+              plugins: () => [
+                require('autoprefixer')(),
+                require('postcss-cssnext')(),
+                require('postcss-pxtorem')({
+                  rootValue: 75,
+                  selectorBlackList: ['weui','mu'],
+                  propList: ['*']
+                }),
+                require('postcss-flexbugs-fixes'),
+                require('postcss-preset-env')({
+                  autoprefixer: {
+                    flexbox: 'no-2009',
+                  },
+                  stage: 3,
+                }),
+                postcssNormalize()
+              ] */
+             
+{
+  loader: 'postcss-loader',
+  options: {
+    postcssOptions: {
+      plugins: []
+    },
+    execute: true,
+    sourceMap: true
+  }
+}
+https://blog.csdn.net/qq_43652492/article/details/110730944
+webpack5
+
+19、样式scoped方案
+解决 React 的 CSS 作用域污染方案：
+方案一：namespaces
+方案二：CSS in JS
+方案三：CSS Modules
+https://cloud.tencent.com/developer/article/1557448
+<p className={styles['p']}>精选</p>
+
+作用域样式如何和namespace合用，处理修改第三方样式库的场景？
+css编译和scss分开，单独引用即可
+引用第三方库打包如何避免重复样式？
+
+20、组件发布
+https://zhuanlan.zhihu.com/p/37366401
+babel-cli
+cnpm i babel-cli -D
+"name": "lhh-cli",
+lhh-react-ui  "transpile": "babel react/src/pages -d dist --copy-files"
+"@babel/cli": "^7.12.10",
+
+组件开发：
+react-src文件为官网演示组件+路由功能
+react-lib 组件打包到根目录下的lib
+      
+webpack.config.snake.js 无用
+配置下
+["import", {libraryDirectory: 'lib',libraryName: "rsnake"}]
+// exclude: /(node_modules|bower_components)/,
+
+配置docz
+npm install -g gatsby-cli
+node_modules\.bin\gatsby
+=》gatsby安装下这个试试
+Can't resolve 'core-js/modules/es.array.flat.js' in 'E:\lhh\react17\.docz\.cache'
+=》core-js
+=> gatsby-theme-docz  去掉
+放弃docz
+
+
+storybook
+太烦啦，哎
+"@storybook/react": "^6.1.11",
+
+21、单元测试
+
+22、热更新
+"react-hot-loader": "^4.13.0",  去掉
+都试过了，最后是https://github.com/gaearon/react-hot-loader/tree/7089062eac273832102c074a368d5af27e23e0b0#react--dom
+import { hot } from 'react-hot-loader'
+
+let home =  function Home (props) {
+  console.log(123555)
+  return (
+    <div>
+      <div className={[styles['head'], 'flex'].join(' ')}>
+        <img src={require('@/assets/imgs/snake.png')}/>
+        <span>rsnake</span>
+      </div>
+      <div>1231399998881113333666777</div>
+      <input type="text"/>
+    </div>
+  )
+}
+
+export default hot(module)(home)
+起效了
+模块热更新还需要关注state的数据是否被更新
+
+打包node和浏览器的
+模块化如何做的

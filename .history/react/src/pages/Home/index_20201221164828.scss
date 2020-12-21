@@ -1,0 +1,20 @@
+@import '@/assets/set.scss';
+.p-home {
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 30px 40px;
+    color: $m-fc;
+}
+.head {
+    font-size: 36px;
+    :global(.logo-name) {
+        margin-left: 16px;
+    }
+    :global(.logo) {
+        color: $m-cr;
+    }
+}
+.des {
+    font-size: 20px;
+    color: $m-sc;
+}
