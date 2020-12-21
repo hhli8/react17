@@ -13,4 +13,5 @@ mark.txt
 node_modules
 /dist
 .project
+.history
 temp
