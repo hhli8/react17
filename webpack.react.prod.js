@@ -120,7 +120,16 @@ module.exports = {
       }, */
       {
         test: sassRegex,
-        include: path.resolve(__dirname, "./react"),
+        include: path.resolve(__dirname, "./react/src/assets"),
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+        }, 'sass-loader', 'postcss-loader']
+      },
+      {
+        test: sassRegex,
+        include: path.resolve(__dirname, "./react/src/pages"),
         use: [{
           loader: MiniCssExtractPlugin.loader
         }, {
