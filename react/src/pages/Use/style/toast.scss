@@ -1,0 +1,39 @@
+@import '@/assets/set.scss';
+.container {
+    padding-top: 30px;
+    padding: 30px 20px 0 20px;
+    :global(.parter) {
+        color: rgba(69, 90, 100, 0.6);
+        padding: 16px 0;
+        font-size: 26px;
+    }
+    ul {
+        background: #fff;
+        border-radius: 20px;
+        li {
+            height: 80px;
+            line-height: 80px;
+            padding: 0 20px;
+            font-size: 28px;
+            color: $m-fc;
+            position: relative;
+            transition: all linear .3s;
+        }
+        li:active {
+            background: #f2f3f5;
+        }
+        li:after {
+            position: absolute;
+            box-sizing: border-box;
+            content: ' ';
+            pointer-events: none;
+            left: 20px;
+            right: 20px;
+            bottom: 0;
+            border-bottom: 1px solid #ebedf0;
+        }
+        li:last-child:after {
+            content: ''
+        }
+    }
+}

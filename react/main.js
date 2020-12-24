@@ -5,7 +5,7 @@ import '@/assets/common.scss'
 import React, { Component } from 'react'
 import store from '@/redux'
 import Routes from '@/router'
-import { AppContainer } from 'react-hot-loader';
+// import { AppContainer } from 'react-hot-loader';
 // import ReactDom from 'react-dom'
 // var x = React
 // console.log(React)

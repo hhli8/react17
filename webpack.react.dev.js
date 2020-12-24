@@ -79,7 +79,7 @@ module.exports = {
         // include: path.resolve(__dirname, "./react"),
         use: [{
           loader: 'style-loader'
-        }, 'css-loader']
+        }, 'css-loader', 'postcss-loader']
       },
       {
         test: sassRegex,
@@ -90,6 +90,15 @@ module.exports = {
           loader: 'css-loader',
         }, 'sass-loader', 'postcss-loader']
       },
+      /* {
+        test: cssRegex,
+        include: path.resolve(__dirname, "./react/src/components"),
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+        }, 'postcss-loader']
+      }, */
       {
         test: sassRegex,
         include: path.resolve(__dirname, "./react/src/pages"),

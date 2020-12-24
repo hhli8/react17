@@ -1,6 +1,6 @@
 {
   "name": "rsnake",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "lint": "eslint --ext .js --ext .jsx react",
     "build": "webpack",
     "start": "webpack-dev-server",
-    "start:react:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.react.dev.js",
+    "start:react:dev": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --config ./webpack.react.dev.js",
     "build:react:prod": "cross-env NODE_ENV=production webpack --config ./webpack.react.prod.js"
   },
   "author": "lihaihong",
@@ -65,7 +65,7 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "rsnake": "^1.0.1"
+    "rsnake": "^1.0.2"
   },
   "sideEffects": [
     "*.css",

@@ -26,6 +26,7 @@
         font-size: 24px;
         color: $m-sc;
         margin-bottom: 20px;
+        padding-left: 30px;
     }
     ul {
         margin-bottom: 30px;
@@ -42,6 +43,9 @@
             transition: all linear .3s;
             :global(.iconfont) {
                 color: #B6C3D2;
+            }
+            a {
+                color: $m-fc;
             }
         }
         li:last-child {

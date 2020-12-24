@@ -1,0 +1,30 @@
+.r-toast-container {
+  
+}
+.r-toast-mask {
+
+}
+.r-toast-content {
+  position: fixed;
+  background: rgba(0, 0, 0, .7);
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  color: #fff;
+  font-size: 28px;
+  z-index: 100;
+  padding: 12px 24px;
+  border-radius: 12px;
+  transition: opacity linear .3s;
+}
+.r-toast-content.img {
+  padding: 26px 30px;
+  text-align: center;
+}
+.r-toast-content .img {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.r-toast-content .img img {
+  width: 50px;
+}

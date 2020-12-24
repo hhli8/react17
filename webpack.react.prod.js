@@ -102,7 +102,7 @@ module.exports = {
         // include: path.resolve(__dirname, "./react"),
         use: [{
           loader: MiniCssExtractPlugin.loader
-        }, 'css-loader']
+        }, 'css-loader', 'postcss-loader']
       },
       /* {
         test: /\.less$/,
@@ -122,7 +122,7 @@ module.exports = {
         test: sassRegex,
         include: path.resolve(__dirname, "./react/src/assets"),
         use: [{
-          loader: 'style-loader'
+          loader: MiniCssExtractPlugin.loader
         }, {
           loader: 'css-loader',
         }, 'sass-loader', 'postcss-loader']

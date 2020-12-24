@@ -2,7 +2,7 @@ export const list = [
   {
     fname: '基础组件',
     children: [
-      { sname: 'Toast 轻提示' },
+      { sname: 'Toast 轻提示', url: '/toast' },
     //   { sname: 'Toast 轻提示' }
     ]
   },

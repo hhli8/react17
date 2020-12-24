@@ -7,14 +7,12 @@ import { list } from './data.js'
 // import { createBrowserHistory } from 'history';  // history路由
 
 // const history = createHashHistory()
-import { HashRouter } from 'react-router-dom'
+// import his from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Item (props) {
   function jump (item) {
-    console.log(item, HashRouter)
-    // history.push({
-    //   name: 'use2'
-    // })
+    //
   }
   return (
     <>
@@ -22,7 +20,9 @@ function Item (props) {
       <ul>
         {
           props.data.children.map((item) => {
-            return <li onClick={() => jump(item)} key="item.sname" className="flex between"><span>{item.sname}</span><span className="iconfont">&#xe616;</span></li>
+            return <li onClick={() => jump(item)} key="item.sname" >
+              <Link className="flex between" to={item.url}><span>{item.sname}</span><span className="iconfont">&#xe616;</span></Link>
+            </li>
           })
         }
       </ul>
