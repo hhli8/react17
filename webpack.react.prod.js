@@ -102,6 +102,7 @@ module.exports = {
         // include: path.resolve(__dirname, "./react"),
         use: [{
           loader: MiniCssExtractPlugin.loader
+          // loader: 'style-loader' // 打包到js里面
         }, 'css-loader', 'postcss-loader']
       },
       /* {

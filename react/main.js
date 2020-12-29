@@ -5,6 +5,7 @@ import '@/assets/common.scss'
 import React, { Component } from 'react'
 import store from '@/redux'
 import Routes from '@/router'
+import { HashRouter } from 'react-router-dom'
 // import { AppContainer } from 'react-hot-loader';
 // import ReactDom from 'react-dom'
 // var x = React
@@ -14,9 +15,17 @@ import Routes from '@/router'
 // document.getElementById('app')
 // )
 // ReactDOM.render(<div>Hello React!</div>,document.getElementById('app'));
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <Routes />
+//   </Provider>,
+//   document.getElementById('app')
+// )
 ReactDOM.render(
   <Provider store={store}>
-    <Routes />
+    <HashRouter>
+      <Routes />
+    </HashRouter>
   </Provider>,
   document.getElementById('app')
 )

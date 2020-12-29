@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom'
 class Mnormal extends React.Component {
   constructor (props) {
     super(props)
+    // console.log(props)
   }
   back () {
     this.props.history.goBack()
@@ -16,7 +17,7 @@ class Mnormal extends React.Component {
       <div className="r-layout">
         <div className="r-lt-header">
           <span className="iconfont left" onClick={() => this.back()}>&#xe68d;</span>
-          <div className="name">Toast</div>
+          <div className="name">{this.props.title}</div>
         </div>
         <div className="r-lt-container">
           {this.props.children}

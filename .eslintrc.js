@@ -147,7 +147,7 @@ module.exports = {
     // 强制在关键字前后使用一致的空格 (前后腰需要)
     "keyword-spacing": 2,
     // 强制一行的最大长度
-    "max-len": [2, 200, { "ignoreUrls": true }],
+    "max-len": [0, 200, { "ignoreUrls": true }],
     // 强制最大行数
     "max-lines": 0,
     // 强制 function 定义中最多允许的参数数量

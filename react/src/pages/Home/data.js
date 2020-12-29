@@ -3,7 +3,7 @@ export const list = [
     fname: '基础组件',
     children: [
       { sname: 'Toast 轻提示', url: '/toast' },
-    //   { sname: 'Toast 轻提示' }
+      { sname: 'Slider 滑动条', url: '/slider' }
     ]
   },
   {
@@ -13,7 +13,14 @@ export const list = [
     ]
   },
   {
-    fname: '交互组件',
+    fname: '反馈组件',
+    children: [
+      { sname: 'Modal 模态框', url: '/modal' }
+    //   { sname: 'Sku 商品规格' }
+    ]
+  },
+  {
+    fname: '业务组件',
     children: [
     //   { sname: 'Sku 商品规格' }
     ]

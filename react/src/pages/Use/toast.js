@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 // import { Button } from 'antd-mobile'
 import { Button, Toast } from 'rsnake'
-import styles from './style/toast.scss'
+import styles from './style/use.scss'
 // import Toast from '@/components/toast'
 
 let use = function Example () {
