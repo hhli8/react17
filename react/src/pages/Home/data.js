@@ -9,7 +9,8 @@ export const list = [
   {
     fname: '布局组件',
     children: [
-    //   { sname: 'ScreenScroll 全屏滚动' }
+      { sname: 'Mnormal 顶部固定', url: 'mnormal' }
+      // { sname: 'ScreenScroll 全屏滚动' }
     ]
   },
   {
@@ -18,11 +19,11 @@ export const list = [
       { sname: 'Modal 模态框', url: '/modal' }
     //   { sname: 'Sku 商品规格' }
     ]
-  },
-  {
+  }
+  /* {
     fname: '业务组件',
     children: [
     //   { sname: 'Sku 商品规格' }
     ]
-  }
+  } */
 ]

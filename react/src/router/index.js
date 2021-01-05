@@ -8,12 +8,15 @@ const Home = lazy(() => import('@/pages/Home'))
 const Use = lazy(() => import('@/pages/Use'))
 const Toast = lazy(() => import('@/pages/Use/toast'))
 const Modal = lazy(() => import('@/pages/Use/modal'))
+const Slider = lazy(() => import('@/pages/Use/slider'))
+const MnormalUse = lazy(() => import('@/pages/Use/mnormal'))
 
 const hrefarr = location.href.split('/')
 const pathname = hrefarr[hrefarr.length - 1]
 const pathTitle = {
   '/toast': 'Toast',
-  '/modal': 'Modal'
+  '/modal': 'Modal',
+  '/slider': 'Slider'
 }
 // console.log(pathname)
 
@@ -44,9 +47,11 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/use" exact component={Use} />
+          <Route path="/mnormal" exact component={MnormalUse} />
           <Mnormal title={pathTitle[location.pathname]}>
             <Route path="/toast" exact component={Toast} />
             <Route path="/modal" exact component={Modal} />
+            <Route path="/slider" exact component={Slider} />
           </Mnormal>
           <Redirect to="/" />
         </Switch>

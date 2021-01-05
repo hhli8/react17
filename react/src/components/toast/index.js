@@ -83,7 +83,7 @@ class Container extends React.Component {
 function isRightParams (params) {
   // console.log(params)
   // 非typeof (data) === 'string' 且非 对象(且对象有参数)
-  if (typeof (params) === 'string') {
+  if (typeof (params) === 'string' || typeof (params) === 'number') {
     return 'base'
   } else if (Object.prototype.toString.call(params) === '[object Object]' && params.icon) {
     return 'img'

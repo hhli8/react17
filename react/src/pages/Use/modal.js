@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import { connect } from 'react-redux'
 // import { Button } from 'antd-mobile'
 // import { Button, Toast } from 'rsnake'
 import styles from './style/use.scss'
 import Modal from '@/components/modal'
-
+// export const ModalContext = createContext()
 let use = function fun () {
   const [modalVisible, setModalVisible] = useState(false)
   const modalConfig = {
@@ -16,10 +16,19 @@ let use = function fun () {
     closeBtn: true, // 显示关闭按钮
     closeText: '关闭'
   }
+  function setConfirm () {
+    setTimeout(() => {
+      console.log('处理完成....')
+      setModalVisible(false)
+    }, 2000)
+  }
   const modalChildren = (
     <div className={styles['dialog']}>
       {/* <span onClick={() => setModalVisible(false)} className="closeBtn">x</span> */}
       <div>这是内容-遮罩层点击不关闭</div>
+      <div className="flex">
+        <div onClick={() => setModalVisible(false)}>取消</div><div onClick={() => setConfirm()}>确定</div>
+      </div>
     </div>
   );
   const [modalVisibleTop, setModalVisibleTop] = useState(false)

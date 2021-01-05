@@ -29,6 +29,22 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash:8].css"
     }),
+    new copyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "./react/react.js"),
+          to: path.resolve(__dirname, "dist/react")
+        },
+        {
+          from: path.resolve(__dirname, "./react/react-dom.js"),
+          to: path.resolve(__dirname, "dist/react")
+        },
+        {
+          from: path.resolve(__dirname, "./react/base.js"),
+          to: path.resolve(__dirname, "dist/react")
+        }
+      ]
+    })
     /* new BuildRightPlugin({
       v: '1.0.0'
     }) */

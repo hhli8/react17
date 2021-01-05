@@ -21,20 +21,17 @@ import { createPortal } from 'react-dom'
 // }
 const Modal = function (props) {
   const [uiShow, setUiShow] = useState(false)
-  const [eShow, setEShow] = useState(false)
   const { children, visible, close, closeOverlay, closeText, closeBtn, position } = props;
   // closeOverlay-默认true
   const bodyOverflow = useRef(window.getComputedStyle(document.body).overflow)
   useEffect(() => {
     if (visible) {
-      setEShow(true)
       setTimeout(() => {
         setUiShow(true)
-      }, 10)
-      document.body.style.overflow = 'hidden'
+      })
+      document.body.style.overflow = 'hidden';
     } else {
-      handleClose()
-      document.body.style.overflow = bodyOverflow.current
+      document.body.style.overflow = bodyOverflow.current;
     }
   }, [visible]);
 
@@ -42,7 +39,6 @@ const Modal = function (props) {
     setUiShow(false)
     setTimeout(() => {
       close()
-      setEShow(false)
     }, 300)
   }
   function handleOverlay () {
@@ -60,7 +56,7 @@ const Modal = function (props) {
     document.body
   )
   return (
-    <>{eShow && modal}</>
+    <>{visible && modal}</>
   )
 }
 
