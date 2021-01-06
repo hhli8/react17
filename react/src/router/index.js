@@ -21,21 +21,42 @@ const pathTitle = {
 // console.log(pathname)
 
 // export default () => (
-//   <HashRouter>
-//     <Suspense fallback={<div></div>}>
-//       <Switch>
-//         <Route path="/" exact component={Home} />
-//         <Route path="/use" exact component={Use} />
-//         <Mnormal title={pathTitle[pathname]}>
-//           <Route path="/toast" exact component={Toast} />
-//         </Mnormal>
-//         <Redirect to="/" />
-//       </Switch>
-//     </Suspense>
-//   </HashRouter>
+//   <Suspense fallback={<div></div>}>
+//     <Switch>
+//       <Route path="/" exact component={Home} />
+//       <Route path="/use" exact component={Use} />
+//       <Route path="/mnormal" exact component={MnormalUse} />
+//       <Mnormal title={pathTitle['/' + pathname]}>
+//         <Route path="/toast" exact component={Toast} />
+//         <Route path="/modal" exact component={Modal} />
+//         <Route path="/slider" exact component={Slider} />
+//       </Mnormal>
+//       <Redirect to="/" />
+//     </Switch>
+//   </Suspense>
 // )
 
-class App extends React.Component {
+function Router (props) {
+  const { match, location, history } = props
+  return (
+    <Suspense fallback={<div></div>}>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/use" exact component={Use} />
+        <Route path="/mnormal" exact component={MnormalUse} />
+        <Mnormal title={pathTitle[location.pathname]}>
+          <Route path="/toast" exact component={Toast} />
+          <Route path="/modal" exact component={Modal} />
+          <Route path="/slider" exact component={Slider} />
+        </Mnormal>
+        <Redirect to="/" />
+      </Switch>
+    </Suspense>
+  )
+}
+export default withRouter(Router)
+
+/* class App extends React.Component {
   constructor (props) {
     super(props)
   }
@@ -60,6 +81,6 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App)
+export default withRouter(App) */
 
 // //fallback={<div>Loading...</div>}>

@@ -5,7 +5,7 @@
 .r-layout .r-lt-header {
     height: 80px;
     line-height: 80px;
-    position: absolute;
+    position: fixed;
     background: #fff;
     width: 100%;
     left: 0;

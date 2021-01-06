@@ -5,7 +5,7 @@ import Mnormal from '@/components/mnormal'
 let use = function Example () {
   return (
     <>
-      <Mnormal>asdad
+      <Mnormal title={'顶部固定布局测试页面'}>
         start<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>dasdasdasd<br/>end
       </Mnormal>
     </>

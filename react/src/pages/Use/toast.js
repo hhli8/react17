@@ -5,7 +5,8 @@ import { Button, Toast } from 'rsnake'
 import styles from './style/use.scss'
 // import Toast from '@/components/toast'
 
-let use = function Example () {
+let use = function Example (props) {
+  // console.log(props)
   return (
     <div className={styles['container']}>
       <div className="parter">基本用法</div>

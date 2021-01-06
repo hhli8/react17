@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 // function Mnormal (props) {
 // }
 // export default Mnormal
-class Mnormal extends React.Component {
+/* class Mnormal extends React.Component {
   constructor (props) {
     super(props)
     // console.log(props)
@@ -25,5 +25,22 @@ class Mnormal extends React.Component {
       </div>
     )
   }
+}
+export default withRouter(Mnormal) */
+function Mnormal (props) {
+  const back = () => {
+    props.history.goBack()
+  }
+  return (
+    <div className="r-layout">
+      <div className="r-lt-header">
+        <span className="iconfont left" onClick={() => back()}>&#xe68d;</span>
+        <div className="name">{props.title}</div>
+      </div>
+      <div className="r-lt-container">
+        {props.children}
+      </div>
+    </div>
+  )
 }
 export default withRouter(Mnormal)
