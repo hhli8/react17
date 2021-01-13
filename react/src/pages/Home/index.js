@@ -31,9 +31,12 @@ function Item (props) {
 }
 
 let home =  function Home (props) {
+  const toLearn = () => {
+    props.history.push('/ulearn')
+  }
   return (
     <div className={styles['p-home']}>
-      <div className={[styles['head'], 'flex', 'hcenter'].join(' ')}>
+      <div className={[styles['head'], 'flex', 'hcenter'].join(' ')} onDoubleClick={() => toLearn()} onClick={() => console.log(1111)}>
         <span className="iconfont logo">&#xe735;</span>
         <span className="logo-name">Rsnake</span>
       </div>

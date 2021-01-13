@@ -1,0 +1,58 @@
+@import '@/assets/set.scss';
+.p-home {
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 30px 40px;
+    color: $m-fc;
+    box-sizing: border-box;
+}
+.head {
+    font-size: 36px;
+    :global(.logo-name) {
+        margin-left: 16px;
+    }
+    :global(.logo) {
+        color: $m-cr;
+    }
+}
+.des {
+    font-size: 20px;
+    color: $m-sc;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.list {
+    p {
+        font-size: 24px;
+        color: $m-sc;
+        margin-bottom: 20px;
+        padding-left: 30px;
+    }
+    ul {
+        margin-bottom: 30px;
+        li {
+            height: 60px;
+            line-height: 60px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            background: #f7f8fa;
+            border-radius: 25px;
+            padding: 0 30px;
+            box-sizing: border-box;
+            font-weight: 600;
+            transition: all linear .3s;
+            :global(.iconfont) {
+                color: #B6C3D2;
+            }
+            a {
+                color: $m-fc;
+            }
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        li:active {
+            background: #e4e8ee;
+        }
+    }
+}
