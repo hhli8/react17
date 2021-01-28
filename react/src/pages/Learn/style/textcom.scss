@@ -1,0 +1,30 @@
+.c-container {
+  font-size: 28px;
+  p {
+    padding: 20px 30px;
+    font-size: 28px;
+    color: #333;
+  }
+  :global(.answer) {
+    background: #2b2b2b;
+    color: #f8f8f2;
+    font-size: 26px;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    overflow: scroll;
+  }
+  :global(.pad-30) {
+    padding: 0 30px;
+  }
+  button {
+    background: #108ee9;
+    font-size: 28px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+  }
+  button:active {
+    background: #0e80d2;
+    color: hsla(0, 0%, 100%, .3);
+  }
+}

@@ -16,6 +16,12 @@ const Umemo = lazy(() => import('@/pages/Learn/Umemo/umemo'))
 const Uversion = lazy(() => import('@/pages/Learn/Uversion'))
 const Uhook = lazy(() => import('@/pages/Learn/Uhook'))
 const Ucallback = lazy(() => import('@/pages/Learn/Ucallback'))
+const Uuseref = lazy(() => import('@/pages/Learn/Uref'))
+const Ujscopy = lazy(() => import('@/pages/Learn/Ujs/copy'))
+const Uwebper = lazy(() => import('@/pages/Learn/Uweb/performance'))
+const Uvdom = lazy(() => import('@/pages/Learn/Uvdom'))
+const Uhttps = lazy(() => import('@/pages/Learn/Unet/https'))
+const Uweblonglist = lazy(() => import('@/pages/Learn/Uweb/longlist'))
 
 const hrefarr = location.href.split('/')
 const pathname = hrefarr[hrefarr.length - 1]
@@ -26,7 +32,13 @@ const pathTitle = {
   '/umemo': 'React.memo和useMemo',
   '/uversion': 'React版本更新相关',
   '/uhook': 'Hook的理解',
-  '/ucallback': 'useCallback和useMemo的使用和区别'
+  '/ucallback': 'useCallback和useMemo的使用和区别',
+  '/uref': 'useRef',
+  '/ujs_copy': '深拷贝和浅拷贝',
+  '/uweb_per': '页面性能监控',
+  '/uvdom': 'react虚拟dom比直接操作好？更快？',
+  '/unet_https': 'https了解吗？',
+  '/uweb_longlist': '长列表渲染优化方案？'
 }
 // console.log(pathname)
 
@@ -68,6 +80,12 @@ function Router (props) {
           <Route path="/uversion" exact component={Uversion} />
           <Route path="/uhook" exact component={Uhook} />
           <Route path="/ucallback" exact component={Ucallback} />
+          <Route path="/uref" exact component={Uuseref} />
+          <Route path="/ujs_copy" exact component={Ujscopy} />
+          <Route path="/uweb_per" exact component={Uwebper} />
+          <Route path="/uvdom" exact component={Uvdom} />
+          <Route path="/unet_https" exact component={Uhttps} />
+          <Route path="/uweb_longlist" exact component={Uweblonglist} />
         </Mnormal>
         <Redirect to="/" />
       </Switch>

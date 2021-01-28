@@ -1,0 +1,26 @@
+:global(.infinite-list-container) {
+  position: relative;
+  height: 600px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+:global(.infinite-list-phantom) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+:global(.infinite-list) {
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  text-align: center;
+}
+:global(.infinite-list-item) {
+  padding: 30px;
+  color: #555;
+  box-sizing: border-box;
+  border-bottom: 1px solid #999;
+}
